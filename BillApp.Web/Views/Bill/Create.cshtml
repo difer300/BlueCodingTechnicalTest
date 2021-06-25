@@ -1,0 +1,32 @@
+﻿@using BillApp.Domain.Models
+@model Bill
+@{
+    ViewData["Title"] = "Bills Page";
+}
+
+<div>
+    <h2>Crate Bill</h2>
+</div>
+
+@using (Html.BeginForm("Create", "Bill", new { }, FormMethod.Post))
+{
+    <div>
+        <div>
+            @Html.Label("Bill Name")
+            <div>
+                @Html.TextBoxFor(b => b.Name, "", new { })
+            </div>
+        </div>
+        <div>
+            @Html.Label("Bill Total")
+            <div>
+                @Html.TextBoxFor(b => b.Total, "", new { })
+            </div>
+        </div>
+        <div>
+            <div>
+                <input type="submit" value="Create" class="btn" />
+            </div>
+        </div>
+    </div>
+}

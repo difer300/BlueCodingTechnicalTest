@@ -1,0 +1,32 @@
+﻿@using BillApp.Domain.Models
+@model IEnumerable<Bill>
+@{
+    ViewData["Title"] = "Bills Page";
+}
+
+<div class="text-center">
+    <table class="table" id="bill-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bill in Model)
+            {
+                <tr>
+                    <td>@bill.Name</td>
+                    <td>@bill.Total</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+        $(document).ready(function () {
+        });;
+    </script>
+} 
